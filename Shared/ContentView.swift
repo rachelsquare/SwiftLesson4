@@ -9,29 +9,60 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
+        // Stack contraining both cards
         VStack {
+            
+            // CN Tower card
             ZStack {
-                Image("toronto").cornerRadius(12.0)
+                Image("toronto")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
                 
-                VStack {
+                // VStack for the text
+                VStack (alignment: .center) {
                     Text("CN Tower")
+                            .font(.largeTitle)
+                            .padding([.top,.leading, .trailing])
+                        
                     Text("Toronto")
                         .font(.caption)
+                        .padding([.leading, .bottom, .trailing])
                         
-                }.padding().background(Color.black).foregroundColor(Color.white).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/).cornerRadius(/*@START_MENU_TOKEN@*/12.0/*@END_MENU_TOKEN@*/)
-            }
+                }
+                // Modifiers applied to the VStack above
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    .cornerRadius(10)
+            }.padding()
             
-            Spacer()
+            // Big Ben card
             ZStack {
-                Image("london").cornerRadius(12.0)
+                Image("london")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
                 
-                VStack {
+                // VStack for the text
+                VStack (alignment: .center){
                     Text("Big Ben")
+                        .font(.largeTitle)
+                        .padding([.top, .leading, .trailing])
+
                     Text("London")
                         .font(.caption)
+                        .padding([.leading, .bottom, .trailing])
                         
-                }.padding().background(Color.black).foregroundColor(Color.white).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/).cornerRadius(/*@START_MENU_TOKEN@*/12.0/*@END_MENU_TOKEN@*/)
-            }
+                }
+                    // Modifiers applied to the VStack above 
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    .cornerRadius(10)
+                
+            }.padding()
             
         }
         
